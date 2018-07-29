@@ -23,9 +23,6 @@ package com.binarywalllabs.socialintegration.helpers;
         import java.util.Arrays;
         import java.util.Collection;
 
-/**
- * FbConnectHelper.java
- */
 public class FbConnectHelper {
     private Collection<String> permissions = Arrays.asList("public_profile ", "email", "user_birthday");    private CallbackManager callbackManager;
     private LoginManager loginManager;

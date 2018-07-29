@@ -1,8 +1,6 @@
 package com.binarywalllabs.socialintegration.helpers;
 
-/**
- * Created by Arun on 06-09-2015.
- */
+
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -31,11 +29,6 @@ import com.google.android.gms.plus.Plus;
 import com.google.android.gms.plus.model.people.Person;
 
 
-/**
- * GooglePlusSignInHelper.java
- * This is helper class to use for google+ sign in.
- * For Error code refer : https://developers.google.com/android/reference/com/google/android/gms/common/ConnectionResult
- */
 public class GooglePlusSignInHelper {
     private final static String TAG = "GooglePlusSignInHelper";
         private final static int RC_SIGN_IN = 100;
@@ -48,11 +41,6 @@ public class GooglePlusSignInHelper {
         private OnGoogleSignInListener loginResultCallback;
         private ResultCallback<Status> logoutResultCallback;
 
-    /**
-     * This method should be called before calling any instance.
-     * This is neccessary to get access token and id of user.
-     * @param googleClientId
-     */
     public static void setClientID(String googleClientId) {
         webClientID = googleClientId;
     }
@@ -74,13 +62,11 @@ public class GooglePlusSignInHelper {
         }
 
         private GooglePlusSignInHelper() {
-            // Configure sign-in to request the user's ID, email address, and basic
-            // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
             gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                     .requestScopes(new Scope(Scopes.PLUS_LOGIN))
-                    .requestProfile() //for profile related info
-                    .requestEmail() //for email
-                    .requestIdToken(webClientID) //for accessToken and id
+                    .requestProfile()
+                    .requestEmail()
+                    .requestIdToken(webClientID)
                     .build();
         }
 
@@ -165,7 +151,6 @@ public class GooglePlusSignInHelper {
         }
 
         public void onActivityResult(int requestCode, int resultCode, Intent data) {
-            // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
             if (requestCode == RC_SIGN_IN) {
                 GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
                 handleSignInResult(result);
