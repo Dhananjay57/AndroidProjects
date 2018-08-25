@@ -1,4 +1,3 @@
 # AndroidProjects
-A Social login and log out Youtube Player
-Login with Google and Facebook 
-You can select a Youtube channel from Pre added Channel list.
+Social login (Google and Facebook) And YouTube Player.
+You can select a Youtube channel from DropDown.
